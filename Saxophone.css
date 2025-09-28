@@ -1,0 +1,408 @@
+:root {
+  --primary-bg: linear-gradient(135deg, #e8eaf6 0%, #fffde7 100%);
+  --header-bg: #282c34;
+  --header-accent: #ffd54f;
+  --header-accent-darker: #ffb300;
+  --header-font: #fff;
+  --hero-bg: linear-gradient(110deg, #ffd54f 0%, #fffde7 100%);
+  --hero-title: #3e2723;
+  --hero-text: #5d4037;
+  --card-bg: #fff;
+  --card-shadow: 0 6px 18px rgba(60,60,60,0.15);
+  --card-border: #ffd54f;
+  --card-border-hover: #ffb300;
+  --card-caption-bg: #fffde7;
+  --card-caption-text: #8d6e63;
+  --section-title: #3e2723;
+  --section-bg-light: #fffde7;
+  --section-bg-gradient: linear-gradient(110deg, #fffde7 0%, #ffd54f 100%);
+  --footer-bg: #282c34;
+  --footer-text: #fffde7;
+}
+
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: #222;
+  background: var(--primary-bg);
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  background: var(--header-bg);
+  color: var(--header-font);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--header-accent);
+}
+nav a {
+  color: var(--header-font);
+  margin-left: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--header-accent);
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem 2rem;
+  background: var(--hero-bg);
+  border-radius: 0 0 32px 32px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--hero-title);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: var(--hero-title);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Gallery styles - Large Size */
+.gallery-section {
+  padding: 3rem 2rem 2rem 2rem;
+  text-align: center;
+}
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--section-title);
+}
+.gallery-row {
+  display: flex;
+  flex-flow: wrap;
+  gap: 2.4rem;
+  justify-content: center;
+}
+.gallery-item {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  padding: 1.4rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  border: 2.5px solid var(--card-border);
+  position: relative;
+}
+.gallery-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 16px 48px rgba(60,60,60,0.22);
+  border-color: var(--card-border-hover);
+}
+.gallery-item img {
+  width: 240px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(60,60,60,0.16);
+  border: 2px solid #ffe082;
+}
+.caption {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  color: var(--card-caption-text);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-align: center;
+  background: var(--card-caption-bg);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 8px rgba(255,213,79,0.08);
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+}
+
+/* Types section */
+.types-section {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--section-bg-light);
+}
+.types-section h2 {
+  font-size: 2rem;
+  color: var(--section-title);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.types-container {
+  display: flex;
+  flex-flow: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.type-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(60,60,60,0.08);
+  padding: 1.5rem 1rem;
+  min-width: 220px;
+  max-width: 320px;
+  margin-bottom: 1rem;
+  text-align: left;
+  border-left: 4px solid var(--header-accent);
+}
+.type-card h3 {
+  color: var(--header-accent-darker);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.type-card p {
+  color: var(--hero-text);
+  font-size: 1rem;
+}
+
+/* History section */
+.history-section {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--section-bg-gradient);
+  border-radius: 0 0 32px 32px;
+  text-align: center;
+}
+.history-section h2 {
+  font-size: 2rem;
+  color: var(--section-title);
+  margin-bottom: 1.5rem;
+}
+.history-section p {
+  color: var(--hero-text);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0.7rem auto;
+}
+
+/* Facts section */
+.facts-section {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--section-bg-light);
+  border-radius: 0 0 32px 32px;
+}
+.facts-section h2 {
+  font-size: 2rem;
+  color: var(--section-title);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.facts-section ul {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style-type: disc;
+  color: var(--hero-text);
+  font-size: 1.1rem;
+  padding-left: 0;
+}
+.facts-section li {
+  margin-bottom: 1rem;
+}
+
+/* Famous Saxophonists section */
+.famous-section {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--section-bg-gradient);
+  border-radius: 0 0 32px 32px;
+}
+.famous-section h2 {
+  font-size: 2rem;
+  color: var(--section-title);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.famous-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.famous-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(60,60,60,0.10);
+  padding: 1.2rem 1rem;
+  min-width: 220px;
+  max-width: 290px;
+  margin-bottom: 1rem;
+  text-align: left;
+  border-top: 4px solid var(--header-accent-darker);
+}
+.famous-card h3 {
+  color: var(--header-accent-darker);
+  font-size: 1.08rem;
+  margin-bottom: 0.5rem;
+}
+.famous-card p {
+  color: var(--hero-text);
+  font-size: 0.96rem;
+}
+
+/* Maintenance section */
+.maintenance-section {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--section-bg-light);
+  border-radius: 0 0 32px 32px;
+}
+.maintenance-section h2 {
+  font-size: 2rem;
+  color: var(--section-title);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.maintenance-section ul {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: disc inside;
+  color: var(--hero-text);
+  font-size: 1.1rem;
+  padding-left: 0;
+}
+.maintenance-section li {
+  margin-bottom: 0.8rem;
+}
+
+/* Footer */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1.2rem 2rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 32px 32px 0 0;
+  margin-top: 2rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .gallery-item {
+    width: 220px;
+  }
+  .gallery-item img {
+    width: 170px;
+    height: 110px;
+  }
+  .caption {
+    font-size: 1rem;
+    width: calc(100% - 20px);
+    bottom: 12px;
+    padding: 0.3rem 0.6rem;
+  }
+  .famous-card {
+    min-width: 160px;
+    max-width: 220px;
+  }
+}
+@media (max-width: 900px) {
+  .types-container,
+  .gallery-row,
+  .famous-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .gallery-item {
+    width: 180px;
+    padding: 1rem;
+  }
+  .gallery-item img {
+    width: 140px;
+    height: 92px;
+  }
+  .caption {
+    font-size: 0.98rem;
+    width: calc(100% - 16px);
+    bottom: 8px;
+    padding: 0.22rem 0.5rem;
+  }
+  .famous-card {
+    min-width: 120px;
+    max-width: 170px;
+    padding: 1rem 0.6rem;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  .hero {
+    padding: 2.5rem 1rem 1rem 1rem;
+  }
+  .gallery-section,
+  .types-section,
+  .history-section,
+  .facts-section,
+  .famous-section,
+  .maintenance-section {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  .gallery-item {
+    width: 96vw;
+    max-width: 320px;
+    min-width: 120px;
+    padding: 0.7rem;
+  }
+  .gallery-item img {
+    width: 90vw;
+    max-width: 250px;
+    min-width: 110px;
+    height: 65vw;
+    max-height: 160px;
+  }
+  .caption {
+    font-size: 0.93rem;
+    width: calc(100% - 12px);
+    bottom: 6px;
+    padding: 0.15rem 0.4rem;
+  }
+  .famous-card {
+    min-width: 120px;
+    max-width: 100vw;
+    padding: 1rem 0.6rem;
+  }
+}
